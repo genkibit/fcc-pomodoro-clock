@@ -1,0 +1,293 @@
+html {
+  font-size: 18px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Trebuchet MS", sans-serif;
+  text-align: center;
+  background-color: #222;
+  -webkit-box-shadow: inset 0px 0px 116px -49px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 116px -49px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 116px -49px rgba(0,0,0,0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-box-pack: end;
+  -moz-box-pack: end;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #9cf;
+  text-decoration: underline;
+}
+
+.hidden {
+  position: absolute;
+  z-index: -99;
+  top: -9999px;
+  left: -9999px;
+}
+
+header {
+  font-size: 16.2px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+#canvas-box {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+/* justify-content: space-around is not consistent between chrome and firefox
+   so I use center when header is hidden and space-around when not */
+#wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#error-msg {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  display: none;
+}
+
+#panel {
+  width: 100vw;
+  padding: 18px 0;
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -o-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -webkit-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+
+button {
+  width: 99px;
+  width: 5.5rem;
+  border-radius: 28px;
+  border-radius: 1.556rem;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 5px 10px;
+  padding: 0.28rem 0.56rem;
+  border: solid #fff 2px;
+  text-decoration: none;
+  background: none;
+}
+
+button:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+#controls button {
+  margin: 0 9px;
+  margin: 0 0.5rem;
+}
+
+.btn-minus, .btn-plus {
+  width: 36px;
+  width: 2rem;
+  height: 36px;
+  height: 2rem;
+  padding: 0 0 1.8px 0;
+  padding: 0 0 0.1rem 0;
+  border-radius: 50%;
+}
+
+input {
+  text-align: center;
+  font-size: 21.599px;
+  font-size: 1.2rem;
+  color: white;
+  border: none;
+  background: none;
+}
+
+#settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+#input-session {
+  color: rgb(204, 255, 153);
+}
+
+#input-break {
+  color: rgb(255, 204, 204)
+}
+
+#session {
+  margin-right: 18px;
+  margin-right: 1rem;
+}
+
+#session, #break {
+  width: 142.2px;
+  width: 7.9rem;
+}
+
+footer {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+  -ms-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+footer > p {
+  margin-right: 18px;
+  margin-right: 1rem;	
+}
+
+#menu {
+  display: none;
+}
+
+
+@media screen and (max-width: 700px) {
+  .slide-up {
+    margin-top: -9.04rem;
+    -o-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -webkit-transition: all 600ms ease;
+    transition: all 600ms ease;
+  }
+
+  #menu {
+    margin-top: 0.5rem;
+     color: #fff;
+    display: block;
+    -ms-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+
+  #wrapper {
+    height: 100vh;
+    -ms-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    -ms-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  #panel {
+    background: #222;
+    background: rgba(25,25,25,0.8);
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+
+  #controls {
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-box-align: center;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  #settings {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    -ms-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+
+  #settings button {
+    margin: 0.7rem 0;
+  }
+}
+
+
+@media screen and (max-width: 377px) {
+  .slide-up {
+    margin-top: -11.383rem;
+    -o-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -webkit-transition: all 600ms ease;
+    transition: all 600ms ease;
+  }
+}
