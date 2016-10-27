@@ -30,3 +30,6 @@ Changelog
 ---
 + 20160917 -- v1.0.0
 	- Initial release.
++ 20161027 -- v1.0.1
+	- Fixed background color reset bug.
+	- Cleaned up code.
