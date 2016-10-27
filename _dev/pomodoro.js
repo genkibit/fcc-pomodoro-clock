@@ -107,9 +107,6 @@
   var openMenu = true;
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-
   // Renders the timer progress bar for mode B
   // 1. Rate should be proportional to the specified time limit
   // 2. radians = angle in degrees * PI / 180
@@ -229,11 +226,7 @@
       errorNode.style.display = 'block';
     }
   }
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-
+  
   // Callback for switching between timer styles
   function toggle_mode() {
     if (mode === 'a') {
@@ -321,10 +314,6 @@
       simpleView = false;
     }
   }
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
 
   // Updates all the timer components, alternating between the
   // session and break data when the timer completes an interval
@@ -442,9 +431,6 @@
   function init() {
     hard_reset();
   }
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 
   // Event handlers
