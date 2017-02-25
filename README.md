@@ -33,3 +33,7 @@ Changelog
 + 20161027 -- v1.0.1
 	- Fixed background color reset bug.
 	- Cleaned up code.
++ 20170225 -- v2.0.0
+  - Added site icons.
+  - Moved audio and icon files to a new local directory.
+  - Minor code fixes.
