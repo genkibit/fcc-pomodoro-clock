@@ -87,7 +87,7 @@
 
   // For sound effect
   var sfx = document.getElementById('sound-effect');
-  var sfxSrc = 'https://dl.dropboxusercontent.com/u/3810405/freecodecamp/pomodoro-clock/sfx_alien-chirp';
+  var sfxSrc = 'assets/audio/sfx_alien-chirp';
 
   // For error message
   var errorNode = document.getElementById('error-msg');
@@ -253,7 +253,7 @@
     }
 
     ctx.fillRect(0,0,W,H);
-    render_timer();
+    render_timer(0);
   }
 
   // Callback for opening and closing of panel in mobile view
