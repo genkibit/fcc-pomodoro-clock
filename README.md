@@ -18,7 +18,7 @@ The project rubric is as follows:
 
 App Link
 ---
-**<http://noelnoche.github.io/fcc-pomodoro-clock/>**.
+**<http://noelnoche.github.io/fcc-pomodoro-clock/>**
 
 
 License
