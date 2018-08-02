@@ -462,8 +462,34 @@
 
 /* Event handlers
 ------------------------------------------------------------------------------*/
-  runBtn.onclick = start_pause;
-  resetBtn.onclick = hard_reset;
+  runBtn.onclick = function(e) { 
+    if (simpleView === false) {
+      start_pause();
+    }
+    else {
+      e.preventDefault();
+    }
+  };
+
+  resetBtn.onclick = function(e) {
+    if (simpleView === false) {
+      hard_reset();
+    }
+    else {
+      e.preventDefault();
+    }    
+  };
+
+  modeBtn.onclick = function(e) {
+    if (simpleView === false) {
+      toggle_mode();
+      select_mode();
+    }
+    else {
+      e.preventDefault();
+    }    
+  };
+  
   menuNode.onclick = toggle_panel;
   
   sessionPlus.onclick = function(e) {
@@ -501,11 +527,6 @@
     }
   };
   
-  modeBtn.onclick = function(e) {
-    toggle_mode();
-    select_mode();
-  };
-
   global.onkeydown = function(e) {
     if (e.keyCode === 32) {
       toggle_view();
