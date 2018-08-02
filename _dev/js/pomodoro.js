@@ -377,6 +377,7 @@
       footerNodes[0].className = 'effect-01b';
       panelNode.className = ' effect-01b';
       simpleView = true;
+      modeBtn.disabled = true;
     }
     else {
 
@@ -385,6 +386,7 @@
       footerNodes[0].className = 'effect-01a';
       panelNode.className = panelNode.className.replace('effect-01b', 'effect-01a');
       simpleView = false;
+      modeBtn.disabled = false;
     }
   }
 
