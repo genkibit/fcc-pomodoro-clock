@@ -4,7 +4,8 @@ Pomodoro Timer
 Synopsis
 ---
 Pomodoro Timer is an online timer made specifically for the popular Pomodoro time managment technique devloped by Francesco Cirillo.
-This is one of a series of projects for the front-end program of **[freeCodeCamp](http://www.freecodecamp.com/)**.
+Visit the **[official site](https://francescocirillo.com/pages/pomodoro-technique)** of the Pomodoro Technique for more information.
+This is one of a series of projects made for the front-end program of **[freeCodeCamp](http://www.freecodecamp.com/)**.
 
 The project rubric is as follows:
 
