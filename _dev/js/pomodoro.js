@@ -449,6 +449,7 @@
       breakData.value = limits[1];
     }
     
+    modeBtn.disabled = false;
     sessionPlus.disabled = false;
     sessionMinus.disabled = false;
     breakPlus.disabled = false;
