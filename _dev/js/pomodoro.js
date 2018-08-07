@@ -150,20 +150,20 @@
     var rate = parseFloat(curSec) / parseFloat(min * 60);
     var r, g, b, bgColor;
     
-    // 1. Using the vales for teal rgb(0, 153, 153) and dark-red rgb(153, 0, 0)
+    // 1. Using the vales for teal rgb(0, 153, 153) and dark-blue rgb(153, 0, 0)
     // 2. Take the difference of each rgb value and adjust the difference with the above calculated rate
-    // 3. Subtract that difference from the teal values for the gradual color shift to light-red
+    // 3. Subtract that difference from the teal values for the gradual color shift to dark-blue
     if (index === 0) {
-      r = Math.floor(153 * rate);
-      g = Math.floor(153 - 153 * rate);
-      b = Math.floor(153 - 153 * rate);
+      r = Math.floor(51 * rate);
+      g = Math.floor(153 - 102 * rate);
+      b = Math.floor(153 - 51 * rate);
       
       bgColor = 'rgb(' + r + ',' + g + ',' + b + ')';
       ctx.fillStyle = bgColor;
       ctx.fillRect(0, 0, W, H);
     }
     else {
-      ctx.fillStyle='#900';
+      ctx.fillStyle='#933';
       ctx.fillRect(0, 0, W, H);
     }
   }
