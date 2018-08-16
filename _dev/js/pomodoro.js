@@ -527,10 +527,14 @@
     }
   };
   
-  global.onkeydown = function(e) {
-    if (e.keyCode === 32) {
+  // global.onkeydown = function(e) {
+  //   if (e.keyCode === 32) {
+  //     toggle_view();
+  //   }
+  // };
+
+  canvas.ondblclick = function(e) {
       toggle_view();
-    }
   };
 
   global.onload = hard_reset;
