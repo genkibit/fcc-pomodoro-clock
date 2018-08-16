@@ -136,7 +136,6 @@ so I use center when header is hidden and space-around when not
 
 #canvas-box {
   position: absolute;
-  z-index: -1;
   left: 0;
   top: 0;
 }
