@@ -19,9 +19,9 @@ The project rubric is as follows:
 
 App Link
 ---
-**<http://noelnoche.github.io/fcc-pomodoro-clock/>**
+**<http://noelnoche.github.io/fcc-pomodoro-timer/>**
 
 
 License
 ---
-Code provided under an **[MIT license](https://github.com/noelnoche/fcc-pomodoro-clock/blob/gh-pages/LICENSE.md)**
+Code provided under an **[MIT license](https://github.com/noelnoche/fcc-pomodoro-timer/blob/gh-pages/LICENSE.md)**
