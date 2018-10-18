@@ -38,10 +38,7 @@
   var ctx = canvas.getContext('2d');
   canvasBox.appendChild(canvas);
   canvas.width = global.innerWidth;
-  canvas.height = global.innerHeight;
-  // var bgImg = new Image();
-  // bgImg.src = 'assets/images/bg_egg-shell.png';
-  
+  canvas.height = global.innerHeight; 
   var W = canvas.width;
   var H = canvas.height;
   var baseSize;
@@ -109,13 +106,6 @@
   
 /* Graphics
 ------------------------------------------------------------------------------*/
-
-  //Renders texture background
-  // function render_texture() {
-  //   ctx.fillStyle = ctx.createPattern(bgImg, 'repeat');
-  //   ctx.fillRect(0, 0, W, H);
-  // }
-
   // Renders the timer progress bar for mode B
   // 1. Rate should be proportional to the specified time limit
   // 2. radians = angle in degrees * PI / 180
@@ -214,7 +204,6 @@
 
 /* Audio
 ------------------------------------------------------------------------------*/
-
   // Helper function for play_track, this determines which audio format is best for your browser
   function get_format_extension() {
     var audio = sfx;
@@ -249,7 +238,6 @@
   
 /* Animation
 ------------------------------------------------------------------------------*/
-
   // Updates all the timer components, alternating between the
   // session and break data when the timer completes an interval
   function update(now) {
@@ -296,7 +284,6 @@
   
 /* Controls and settings
 ------------------------------------------------------------------------------*/
-
   // Callback for switching between timer styles
   function toggle_mode() {
     if (mode === 'a') {
@@ -370,9 +357,6 @@
   // Callback for switching to minimalist view
   function toggle_view() {
     if (simpleView === false) {
-
-      // Since we keep header hidden, need to disable this code
-      // header[0].className = 'effect-01b';
       menuNode.className = 'effect-01b';
       footerNodes[0].className = 'effect-01b';
       panelNode.className = ' effect-01b';
@@ -380,8 +364,6 @@
       modeBtn.disabled = true;
     }
     else {
-
-      // header[0].className = 'effect-01a';
       menuNode.className = 'effect-01a';
       footerNodes[0].className = 'effect-01a';
       panelNode.className = panelNode.className.replace('effect-01b', 'effect-01a');
@@ -527,12 +509,6 @@
     }
   };
   
-  // global.onkeydown = function(e) {
-  //   if (e.keyCode === 32) {
-  //     toggle_view();
-  //   }
-  // };
-
   canvas.ondblclick = function(e) {
       toggle_view();
   };
