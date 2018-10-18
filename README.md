@@ -30,5 +30,5 @@ Code provided under an **[MIT license](https://github.com/noelnoche/fcc-pomodoro
 
 Notes / Issues
 ---
-Sound does not play on recent versions of Safari and other browsers due the autoplay setting being disabled by default. 
-This can resolved by changing the autoplay setting or downloading and running the application locally.
+Sound may not play on recent versions of Safari and other browsers due the autoplay setting being disabled by default. 
+This can resolved by enabling the autoplay setting or downloading and running the application locally.
