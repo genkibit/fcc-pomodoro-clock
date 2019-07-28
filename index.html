@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="author" content="Noel Noche">
+    <meta name="description" content="Improve focus and accomplish tasks with this online timer, which is designed to complement the Pomodoro time managment technique developed by Francesco Cirillo.">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/LgFbmGHjiarLHMRUDk017Q_u3KhJOcmGbLj12Nsz6nBjhYsgedXkF1tFweUw7HX8VuOLa8Xr4Ry8vfcU5qGwg9wx4UYhjQbkiAmwP-2j2EASiDvhZfehNbI2NqkzYtS48VxfUF15XA=s300-no">
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css">
+    <style>
+      html{box-sizing:border-box;font-size:16px}*,:after,:before{box-sizing:inherit}body{height:100vh;min-width:20rem;max-width:100vw;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;font-family:Oswald,Helvetica,sans-serif;font-weight:300;letter-spacing:1px;text-align:center;background-color:#222;box-shadow:inset 0 0 115px -50px rgba(0,0,0,.75)}a{color:inherit;text-decoration:none}a:hover{color:#9cf}.sr-only{position:absolute;height:1px;width:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);border:0}#page-wrapper{height:100vh;flex-direction:column;justify-content:flex-start}button{height:2rem;width:2rem;color:inherit;letter-spacing:inherit;background:0 0;border:1px solid #fff}button:hover{background:#3cb0fd}.effect-01a{opacity:1;visibility:visible;transition:all .6s ease}.effect-01b{opacity:0;visibility:hidden;transition:all .6s ease}noscript{position:absolute;z-index:99;left:0;top:0;width:100%;background-color:red}#message{display:none;position:fixed;top:0;left:0;width:100%;z-index:1000;padding:.5rem 0;color:#000;background-color:#fc0}#main{position:fixed;top:0;left:0;width:100%;display:flex;flex-wrap:wrap;justify-content:center}#canvas-box{position:absolute;left:0;top:0}#canvas-box::before{content:"";position:absolute;top:0;left:0;width:100%;height:100vh;background-image:url("assets/graphics/bg_egg-shell.png")}#panel{width:inherit;padding:1rem 0;display:flex;flex-wrap:wrap;justify-content:space-around;order:0;transition:all .6s ease;background:#222;background:rgba(25,25,25,.8)}#controls{margin-bottom:1rem;display:flex;align-items:center}#session{margin-bottom:1rem}.btn-controls{width:5.5rem;margin:0 .5rem;text-transform:uppercase}#settings{display:flex;flex-direction:column;justify-content:space-around}.settings-section{width:9.2rem}.btn-settings{font-size:.65rem}input{height:2rem;color:inherit;font-size:1.5rem;text-align:center;vertical-align:bottom;background:0 0;border:none}#input-session{color:#cf9}#input-break{color:#fcc}.slide-up{margin-top:-10rem;transition:all .6s ease}#menu{margin-top:.5rem;color:#fff;display:block;order:1}footer{position:relative;display:flex;flex-wrap:wrap;justify-content:center;color:#fff}footer>p{margin:.25rem;margin-right:1rem;padding:.25rem 0}.min-view-text{display:none}@media screen and (min-width:700px){#menu{display:none}#panel{background:0 0}#controls{margin-bottom:0}#session{margin-bottom:0}#settings{flex-direction:row;flex-wrap:nowrap}.min-view-text{display:block}}@media screen and (min-width:1400px){html{font-size:18px}}@media screen and (min-width:1680px){html{font-size:20px}}
+    </style>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>Pomodoro Timer - Noel Noche | hellonoel.com</title>
+  </head>
+  <body>
+    <!--[if lte IE 11]>
+    <p class="browsehappy">You are using a <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <noscript>Sorry, you need JavaScript enabled to run this application.</noscript>
+    <div id="message"></div>
+
+    <div id="canvas-box"></div>
+
+    <div id="main">
+      <header class="sr-only">
+        <h1>Pomodoro Timer</h1>
+      </header>
+      
+      <div id="menu"><a>&hellip;</a></div>
+      
+      <div id="panel">
+        <div id="controls">
+          <button class="btn-controls" id="btn-run" type="button">start</button>
+          <button class="btn-controls" id="btn-reset" type="button">reset</button>
+          <button class="btn-controls" id="btn-mode" type="button">mode A</button>
+        </div>
+        
+        <div id="settings">
+          <div class="settings-section" id="session">
+            <span class="sr-only"><label for="input-session">Session</label><br></span>
+            <button class="btn-settings btn-plus" type="button">&#9650;</button>
+            <input id="input-session" type="text" size="3" readonly>
+            <button class="btn-settings btn-minus" type="button">&#9660;</button>
+          </div>
+          
+          <div class="settings-section" id="break">
+            <span class="sr-only"><label for="input-break">Break</label><br></span>
+            <button class="btn-settings btn-plus" type="button">&#9650;</button>
+            <input id="input-break" type="text" size="3" readonly>
+            <button class="btn-settings btn-minus" type="button">&#9660;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <p><a href="https://github.com/noelnoche/fcc-pomodoro-timer">GitHub</a></p>
+      <p><a href="https://hellonoel.com">hellonoel.com</a></p>
+    </footer>  
+    
+    <audio id="sound-effect">
+      <source src="assets/audio/sfx_alien-chirp.mp3" type="audio/mp3">
+      <source src="assets/audio/sfx_alien-chirp.ogg" type="audio/ogg">
+    </audio>
+    
+    <script>
+      (function(d){function r(b){x=(b-F-y)/1E3;if(0>=60*g-x){b=G;if(""!==b.canPlayType("audio/mp3"))var c=".mp3";else""!==b.canPlayType("audio/ogg")?c=".ogg":(H.innerHTML="Unsupported audio format",H.style.display="block");G.src="assets/audio/sfx_alien-chirp"+c;G.load();G.play();0===n?n=1:(z++,n=0);g=t[n];J=Q[n];F=Date.now();y=A=0}if("b"===p){var e=parseFloat(x)/parseFloat(60*g);!1===B?a.fillStyle="#099":0===n?(c=Math.floor(51*e),b=Math.floor(153-153*e),e=Math.floor(153-153*e),a.fillStyle="rgb("+c+","+
+b+","+e+")"):a.fillStyle="#300"}else a.fillStyle="#036";a.fillRect(0,0,u,h);c=x;a.strokeStyle="#000";a.lineWidth=.05*k;a.beginPath();a.arc(u/2,h/2,k/2-.15*k,0,2*Math.PI);a.stroke();a.closePath();A=360/(60*g)*c;c=A*Math.PI/180;a.strokeStyle=J;a.lineWidth=.05*k;a.beginPath();a.arc(u/2,h/2,k/2-.15*k,270*Math.PI/180,c+270*Math.PI/180,!1);a.stroke();a.closePath();e=(e=parseInt(x,10))||0;c=u/2;b=Math.floor((60*g-e)/60);e="00"+(60*g-e)%60;var d=.1*k;if(60<=b){var f=Math.floor(b/60);b%=60}else f="00";f=("00"+
+f).substr(-2);b=("00"+b).substr(-2);e=e.substr(-2);a.fillStyle="#cff";a.font=d+"px Oswald";d=a.measureText("00").width;a.textAlign="end";a.textBaseline="middle";a.fillText(f,c,h/2-1.2*d);a.fillText(b,c,h/2);a.fillText(e,c,h/2+1.2*d);a.textAlign="start";a.fillStyle="#fff";z=("00"+z).substr(-2);a.fillText(z,1.05*c,h/2)}function K(){var b=Date.now();r(b);v&&d.requestAnimationFrame(K)}function R(b){b=void 0===b?!0:b;var a=parseInt(C.value,10);1440>a&&!0===b&&C.value++;1<a&&!1===b&&C.value--;t[0]=C.value;
+g=t[0]}function S(b){b=void 0===b?!0:b;var a=parseInt(w.value,10);1440>a&&!0===b&&w.value++;1<a&&!1===b&&w.value--;t[1]=w.value}function T(){!1===D?(l.className=l.className.replace(" slide-up",""),D=!0):(l.className+=" slide-up",D=!1)}function U(){B=v=!1;D=!0;q=!1;g=n=0;E.innerHTML="start";y=L=z=A=0;J=Q[0];l.className="panel effect-01a";p=p||"a";f.innerHTML="a"===p?"mode B":"mode A";g=g||t[0];C.value=g;w.value=w.value||t[1];f.disabled=!1;M.disabled=!1;N.disabled=!1;O.disabled=!1;P.disabled=!1}(function(){for(var a=
+0,c=["ms","moz","webkit","o"],e=0;e<c.length&&!d.requestAnimationFrame;++e)d.requestAnimationFrame=d[c[e]+"RequestAnimationFrame"],d.cancelAnimationFrame=d[c[e]+"CancelAnimationFrame"]||d[c[e]+"CancelRequestAnimationFrame"];d.requestAnimationFrame||(d.requestAnimationFrame=function(b,e){var c=Date.now(),f=Math.max(0,16-(c-a)),g=d.setTimeout(function(){b(c+f)},f);a=c+f;return g});d.cancelAnimationFrame||(d.cancelAnimationFrame=function(a){clearTimeout(a)})})();var F=0,g=0,x=0,z=0,J="#cf9",n=0,Q=["#cf9",
+"#fcc"],A=0,B=!1,v=!1,L=0,y=0,E=document.getElementById("btn-run"),W=document.getElementById("btn-reset"),t=["25","5"],C=document.getElementById("input-session"),M=document.querySelector("#session .btn-plus"),N=document.querySelector("#session .btn-minus"),w=document.getElementById("input-break"),O=document.querySelector("#break .btn-plus"),P=document.querySelector("#break .btn-minus"),G=document.getElementById("sound-effect"),H=document.getElementById("message"),l=document.getElementById("panel"),
+V=document.getElementsByTagName("footer"),q=!1,f=document.getElementById("btn-mode"),p=null,I=document.getElementById("menu"),D=!0,m=document.createElement("canvas"),X=document.getElementById("canvas-box");if(m.getContext){var a=m.getContext("2d");X.appendChild(m);m.width=d.innerWidth;m.height=d.innerHeight;var u=m.width,h=m.height}else H.innerHtml="Your browser does not support this application.",H.style.display="block";var k=null;k=u>h?h:u;E.onclick=function(){if(!1===q)if(!1===B)g&&!1===B&&("block"===
+d.getComputedStyle(I,null).getPropertyValue("display")&&!0===D&&T(),F=Date.now(),Date.now(),B=v=!0,E.innerHTML="pause",M.disabled=!0,N.disabled=!0,O.disabled=!0,P.disabled=!0,K());else{var a=Date.now();!0===v?(L=a,v=!1,E.innerHTML="start",f.disabled=!0):(y+=a-L,v=!0,E.innerHTML="pause",f.disabled=!1,K())}};W.onclick=function(){!1===q&&(F=Date.now(),y=A=0,U(),r())};f.onclick=function(){!1===q&&("a"===p?(p="b",f.innerHTML="mode A"):(p="a",f.innerHTML="mode B"),r())};M.onclick=function(){R(!0);r()};
+N.onclick=function(){R(!1);r()};O.onclick=function(){S(!0)};P.onclick=function(){S(!1)};m.ondblclick=function(){!1===q?(I.className="effect-01b",V[0].className="effect-01b",l.className="effect-01b",q=!0,f.disabled=!0):(I.className="effect-01a",V[0].className="effect-01a",l.className=l.className.replace("effect-01b","effect-01a"),q=!1,f.disabled=!1)};I.onclick=T;d.onload=function(){U();r()}})(this);
+    </script>
+  </body>
+</html>

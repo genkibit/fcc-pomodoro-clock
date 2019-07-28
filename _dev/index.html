@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="author" content="Noel Noche">
+    <meta name="description" content="Improve focus and accomplish tasks with this online timer, which is designed to complement the Pomodoro time managment technique developed by Francesco Cirillo.">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/LgFbmGHjiarLHMRUDk017Q_u3KhJOcmGbLj12Nsz6nBjhYsgedXkF1tFweUw7HX8VuOLa8Xr4Ry8vfcU5qGwg9wx4UYhjQbkiAmwP-2j2EASiDvhZfehNbI2NqkzYtS48VxfUF15XA=s300-no">
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>Pomodoro Timer - Noel Noche | hellonoel.com</title>
+  </head>
+  <body>
+    <!--[if lte IE 11]>
+    <p class="browsehappy">You are using a <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <noscript>Sorry, you need JavaScript enabled to run this application.</noscript>
+    <div id="message"></div>
+
+    <div id="canvas-box"></div>
+
+    <div id="main">
+      <header class="sr-only">
+        <h1>Pomodoro Timer</h1>
+      </header>
+      
+      <div id="menu"><a>&hellip;</a></div>
+      
+      <div id="panel">
+        <div id="controls">
+          <button class="btn-controls" id="btn-run" type="button">start</button>
+          <button class="btn-controls" id="btn-reset" type="button">reset</button>
+          <button class="btn-controls" id="btn-mode" type="button">mode A</button>
+        </div>
+        
+        <div id="settings">
+          <div class="settings-section" id="session">
+            <span class="sr-only"><label for="input-session">Session</label><br></span>
+            <button class="btn-settings btn-plus" type="button">&#9650;</button>
+            <input id="input-session" type="text" size="3" readonly>
+            <button class="btn-settings btn-minus" type="button">&#9660;</button>
+          </div>
+          
+          <div class="settings-section" id="break">
+            <span class="sr-only"><label for="input-break">Break</label><br></span>
+            <button class="btn-settings btn-plus" type="button">&#9650;</button>
+            <input id="input-break" type="text" size="3" readonly>
+            <button class="btn-settings btn-minus" type="button">&#9660;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <p><a href="https://github.com/noelnoche/fcc-pomodoro-timer">GitHub</a></p>
+      <p><a href="https://hellonoel.com">hellonoel.com</a></p>
+    </footer>  
+    
+    <audio id="sound-effect">
+      <source src="assets/audio/sfx_alien-chirp.mp3" type="audio/mp3">
+      <source src="assets/audio/sfx_alien-chirp.ogg" type="audio/ogg">
+    </audio>
+    
+    <script src="js/pomodoro.js"></script>
+  </body>
+</html>
